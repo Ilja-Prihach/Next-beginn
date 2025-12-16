@@ -3,6 +3,7 @@
 import styles from "./header.module.css"
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useCallback} from "react";
+import Link from "next/link";
 
 
 export const Header = () => {
@@ -34,6 +35,7 @@ export const Header = () => {
                 <li><button  onClick={() => router.push("/hello")} className={styles.link}>Main</button></li>
                 <li><button  onClick={() => router.push("/profile", {scroll: false})} className={styles.link}> Profile</button></li>
                 <li><button  onClick={() => router.push("/profile/123")} className={styles.link}>Profile 123 </button></li>
+                <li><Link  href={"/books"} className={styles.link}>Books </Link></li>
                 <li><button  onClick={() => router.forward()} className={styles.link}>Forward</button></li>
             </ul>
         </nav>
